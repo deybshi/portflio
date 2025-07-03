@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>About</title>
+</head>
+
+<header class="header">
+    <a href="about.html">About me</a>
+    <a href="resume.html">Resume</a>
+    <a href="service.html">Services</a>
+    <a href="project.html">Project</a>
+    <a href="contact.html">Contact</a>
+    <a href="portfolio.html"
+        style="position: absolute; left: 0; font-size: 18px; color: rgb(29, 255, 255); image-resolution: 300×200 px;">HOME</i></a>
+</header>
+
+<body style="background-color: rgb(11, 13, 15);">
+    <h2 class="h2">ABOUT ME</h2>
+    <img src="deyb3.jpg" class="image" width="250" height="auto">
+    <h3 class="myh3">IT Student | Aspiring Front End Developer</h3>
+    <p class="a-par">Hello! I am Fernan Dave C. Agurin an aspiring Front End Developer. I love and i enjoy coding so
+        much. <br> This is not just about programming, this is life.</p>
+
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            if (link.getAttribute('target') !== '_blank' && link.href.includes('.html')) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = this.href;
+                    }, 400); // match the CSS transition duration
+                });
+            }
+        });
+        window.onpageshow = () => window.scrollTo(0, 0);
+    </script>
+
+    <div class="info1">
+        <li class="phone"><strong>Phone:</strong> +63 909 557 4803</li>
+        <li class="city"><strong>City:</strong> Virac, Catanduanes</li>
+        <li class="school"><strong>School:</strong> Catanduanes State University</li>
+    </div>
+
+    <div class="info2">
+        <li class="college"><strong>College level:</strong> 1st year college</li>
+        <li class="email"><strong>E-mail:</strong> afernandave@gmail.com</li>
+    </div>
+
+    <p class="myparr">I am an aspiring front-end web developer with a passion for creating responsive and visually
+        appealing websites. I enjoy turning designs into functional code using HTML, CSS, and JavaScript. I’m currently
+        learning modern frameworks and best practices to improve user experience. I’m eager to grow my skills and
+        contribute to real-world web projects. My goal is to build clean, efficient, and accessible websites that make
+        an impact.</p>
+
+    <h4 class="h4">MY HOBBY______</h4>
+
+    <div class="i-border1">
+        <i class="fa-solid fa-gamepad"></i>
+        <i class="fa-brands fa-spotify"></i>
+        <i class="fa-solid fa-wifi"></i>
+        <i class="fa-solid fa-film"></i>
+        <i class="fa-solid fa-basketball"></i>
+        <i class="fa-solid fa-motorcycle"></i>
+        <i class="fa-solid fa-laptop-code"></i>
+        <i class="fa-solid fa-dumbbell"></i>
+        <i class="fa-solid fa-guitar"></i>
+        <i class="fa-solid fa-microphone"></i>
+    </div>
+
+    <div class="p">
+        <p class="game">Online Games</p>
+        <p class="spotify">Listening to Music</p>
+        <p class="wifi">Browsing Internet</p>
+        <p class="film">Watching Movies</p>
+        <p class="ball">Basketball</p>
+        <p class="motorcycle">Motorcycle Riding</p>
+        <p class="laptop">Coding</p>
+        <p class="dumbbell">Gym</p>
+        <p class="guitar">Playing Guitar</p>
+        <p class="mic">Singing</p>
+    </div>
+    <h4 class="h4-2">SKILLS______</h4>
+
+    <div class="skills-section">
+        <div class="border">
+            <p class="skill">HTML<progress value="30" max="100" class="progress-bar"></progress> 30%</p>
+            <p class="skill" style="font-size: 13px;">CSS <progress value="20" max="100"
+                    class="progress-bar"></progress>20%</p>
+            <p class="skill">JavaScript <progress value="5" max="100" class="progress-bar"></progress> 5%</p>
+        </div>
+
+        <div class="border2">
+            <p class="skill">Networking <progress value="75" max="100" class="progress-bar"></progress> 75%</p>
+            <p class="skill">Hardware Troubleshooting <progress value="70" max="100" class="progress-bar"></progress>
+                70%</p>
+            <p class="skill">Website Development <progress value="20" max="100" class="progress-bar"></progress> 20%</p>
+        </div>
+    </div>
+
+
+
+    <footer class="footer">&copy; 2025 Fernan Dave Agurin. All rights reserved.</footer>
+</body>
+<style>
+    .skills-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 60px;
+        padding: 20px 0;
+    }
+
+    .border,
+    .border2 {
+        flex: 1;
+        min-width: 20px;
+    }
+
+    .skill {
+        color: white;
+        margin-bottom: 20px;
+        font-family: sans-serif;
+        font-size: 12px;
+    }
+
+    .progress-bar {
+        width: 94%;
+        height: 15px;
+        border: none;
+        border-radius: 10px;
+        appearance: none;
+        -webkit-appearance: none;
+        margin-top: 5px;
+    }
+
+    .progress-bar::-webkit-progress-bar {
+        background-color: #444;
+        border-radius: 10px;
+    }
+
+    .progress-bar::-webkit-progress-value {
+        background-color: rgb(69, 255, 12);
+        border-radius: 10px;
+    }
+
+    .progress-bar::-moz-progress-bar {
+        background-color: aqua;
+        border-radius: 10px;
+    }
+
+    .border {
+        position: absolute;
+        top: 63em;
+        left: 4.8em;
+        color: white;
+        font-size: 14px;
+        border: 2px solid rgb(11, 13, 15);
+        ;
+        width: 34em;
+        padding: 10px;
+    }
+
+    .border2 {
+        position: absolute;
+        top: 63em;
+        left: 41em;
+        color: white;
+        font-size: 14px;
+        border: 2px solid rgb(11, 13, 15);
+        ;
+        width: 34em;
+        padding: 10px;
+    }
+
+    .h4-2 {
+        position: absolute;
+        color: gray;
+        top: 52em;
+        left: 5em;
+    }
+
+    .h2 {
+        position: absolute;
+        top: 3.5em;
+        left: 5em;
+        color: wheat;
+    }
+
+    .p {
+        top: 21.3em;
+        position: absolute;
+        color: white;
+    }
+
+    .game {
+        position: relative;
+        left: 9.5em;
+        font-size: 14px;
+        top: 17.8em;
+
+    }
+
+
+    .spotify {
+        position: relative;
+        left: 22.5em;
+        font-size: 14px;
+        top: 15.7em;
+
+    }
+
+    .wifi {
+        position: relative;
+        left: 36em;
+        font-size: 14px;
+        top: 13.5em;
+
+    }
+
+    .film {
+        position: relative;
+        left: 48.9em;
+        font-size: 14px;
+        top: 11.3em;
+
+    }
+
+    .ball {
+        position: relative;
+        left: 62.2em;
+        font-size: 14px;
+        top: 9.1em;
+
+    }
+
+
+    .motorcycle {
+        position: relative;
+        left: 9.5em;
+        font-size: 14px;
+        top: 12em;
+
+    }
+
+    .laptop {
+        position: relative;
+        left: 21.5em;
+        font-size: 15px;
+        top: 9.1em;
+
+    }
+
+    .dumbbell {
+        position: relative;
+        left: 33.8em;
+        font-size: 15px;
+        top: 6.9em;
+
+    }
+
+    .guitar {
+        position: relative;
+        left: 45.7em;
+        font-size: 15px;
+        top: 4.7em;
+    }
+
+    .mic {
+        position: absolute;
+        left: 58em;
+        font-size: 15px;
+        top: 21.3em;
+    }
+
+    i.fa-gamepad,
+    i.fa-spotify,
+    i.fa-wifi,
+    i.fa-basketball,
+    i.fa-film,
+    i.fa-motorcycle,
+    i.fa-microphone,
+    i.fa-laptop-code,
+    i.fa-dumbbell,
+    i.fa-guitar {
+        border: 1px;
+        padding: 11px;
+        font-size: 20px;
+        margin-left: 20px;
+        margin-top: 1.5em;
+        width: 140px;
+        background-color: rgb(43, 37, 37);
+        transition: 0.5s ease;
+    }
+
+    i.fa-gamepad:hover,
+    i.fa-spotify:hover,
+    i.fa-wifi:hover,
+    i.fa-basketball:hover,
+    i.fa-film:hover,
+    i.fa-motorcycle:hover,
+    i.fa-microphone:hover,
+    i.fa-laptop-code:hover,
+    i.fa-dumbbell:hover,
+    i.fa-guitar:hover {
+        background-color: #615e5e;
+        opacity: 0.8;
+    }
+
+    i.fa-guitar {
+        color: teal;
+    }
+
+    i.fa-microphone {
+        color: silver;
+    }
+
+    i.fa-motorcycle {
+        color: goldenrod;
+    }
+
+    i.fa-laptop-code {
+        color: rgb(180, 174, 174);
+    }
+
+    i.fa-dumbbell {
+        color: rgb(5, 93, 7);
+    }
+
+    i.fa-film {
+        color: rgb(186, 7, 186);
+    }
+
+    i.fa-basketball {
+        color: rgb(255, 171, 15);
+    }
+
+    i.fa-gamepad {
+        margin-left: 19px;
+        color: red;
+    }
+
+    i.fa-spotify {
+        color: rgb(12, 169, 12);
+    }
+
+    i.fa-wifi {
+        color: rgb(39, 174, 231);
+    }
+
+
+    .i-border1 {
+        position: absolute;
+        top: 35em;
+        left: 4.5em;
+        border: 2px solid rgb(96, 229, 35);
+        width: 60em;
+        height: 180px;
+        background-color: rgb(11, 13, 15);
+    }
+
+    .footer {
+        position: absolute;
+        top: 75em;
+        left: 58em;
+        color: rgb(116, 113, 113);
+    }
+
+    .h4 {
+        position: absolute;
+        top: 31em;
+        left: 5em;
+        color: rgb(151, 151, 151);
+    }
+
+    .myparr {
+        position: absolute;
+        top: 24em;
+        color: rgb(231, 231, 231);
+        font-family: serif;
+        left: 21em;
+        right: 9em;
+    }
+
+    .info1 {
+        position: absolute;
+        display: inline;
+        top: 17em;
+        left: 21em;
+        color: rgb(246, 241, 241);
+    }
+
+    .info2 {
+        position: absolute;
+        display: inline;
+        top: 17em;
+        left: 45em;
+        color: rgb(246, 241, 241);
+    }
+
+    .city {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .email {
+        margin-top: 15px;
+    }
+
+    .a-par {
+        position: absolute;
+        color: rgb(236, 233, 233);
+        font-size: 15px;
+        font-style: italic;
+        top: 12em;
+        left: 22em;
+    }
+
+    .myh3 {
+        position: absolute;
+        color: rgb(24, 210, 24);
+        top: 6.8em;
+        left: 17.9em;
+    }
+
+    .image {
+        position: absolute;
+        top: 9em;
+        left: 4em;
+    }
+
+    body {
+        opacity: 1;
+        transition: opacity 0.4s ease;
+    }
+
+    body.fade-out {
+        opacity: 0;
+    }
+
+    .header {
+        position: fixed;
+        background-color: rgb(3, 4, 4);
+        color: white;
+        font-family: 'Tahoma', sans-serif;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 13px;
+        border: 0px 1px solid white;
+        z-index: 999;
+    }
+
+    .header a::after {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: rgb(39, 253, 253);
+        transition: width 0.3s ease;
+    }
+
+    .header a:hover::after {
+        width: 100%;
+    }
+
+    .header a:active {
+        color: aqua;
+    }
+
+    .header a {
+        position: relative;
+        text-decoration: none;
+        color: rgb(218, 218, 218);
+        margin-left: 42px;
+        left: 42em;
+        font-size: 15px;
+        font-family: monospace;
+    }
+</style>
+
+</html>
