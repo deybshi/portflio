@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Resume</title>
+</head>
+
+<body style="background-color: rgb(11, 13, 15);">
+
+    <header class=" header">
+        <a href="about.html">About me</a>
+        <a href="resume.html">Resume</a>
+        <a href="service.html">Services</a>
+        <a href="project.html">Project</a>
+        <a href="contact.html">Contact</a>
+        <a href="index.html"
+            style="position: absolute; left: 0; font-size: 18px; color: rgb(29, 255, 255); image-resolution: 300×200 px;">HOME
+            </i></a>
+
+        <script>
+            document.querySelectorAll('a').forEach(link => {
+                if (link.getAttribute('target') !== '_blank' && link.href.includes('.html')) {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        document.body.classList.add('fade-out');
+                        setTimeout(() => {
+                            window.location.href = this.href;
+                        }, 400); // match the CSS transition duration
+                    });
+                }
+            });
+            window.onpageshow = () => window.scrollTo(0, 0);
+        </script>
+    </header>
+
+    <div class="image">
+        <img src="deyb3-modified.jpg" alt="pic" width="430">
+    </div>
+
+
+    <h2 class="h2">EDUCATIONAL BACKGROUND</h2>
+    <div class="college">
+        <h3 class="h3">Academic Records</h3>
+        <h4 class="h4">
+            <li class="title">CATANDUANES STATE UNIVERSITY</li>
+        </h4>
+        <p class="p3">BS INFO TECH</p>
+        <li class="list">FIRST YEAR | 2024-2025</li>
+        <p class="p1">2024 - PRESENT</p>
+    </div>
+
+    <h4 class="h4-2">
+        <li class="title">CATANDUANES NATIONAL HIGH SCHOOL</li>
+    </h4>
+    <p class="p2">2018 - 2024</p>
+    <div class="hs">
+        <li class="list2">Graduated ( Major-CSS (ICT) ) | 2023-2024 - with honor</li>
+        <li class="list2">Passed ( Major-CSS (ICT) ) | 2022-2023 - with honor </li>
+        <li class="list2">Moving up (Major-ICT) | 2021-2022 - with honor</li>
+        <li class="list2">Passed | 2020-2021 - with honor</li>
+        <li class="list2">Passed | 2019-2020 - with honor</li>
+        <li class="list2">Passed | 2018-2019 - with honor</li>
+    </div>
+
+    <h4 class="h4-3">
+        <li class="title">VIRAC PILOT ELEMENTARY SCHOOL</li>
+    </h4>
+    <p class="p4">2012 - 2018</p>
+    <div class="elem">
+        <li class="list1">Passed | 2017-2018</li>
+        <li class="list1">Passed | 2016-2017</li>
+        <li class="list1">Passed | 2015-2016</li>
+        <li class="list1">Passed | 2014-2015</li>
+        <li class="list1">Passed | 2013-2014</li>
+        <li class="list1">Passed | 2012-2013</li>
+    </div>
+
+    <h3 class="myh3">CERTIFICATE</h3>
+
+</body>
+
+<footer class="footer">&copy; 2025 Fernan Dave Agurin. All rights reserved.</footer>
+
+<style>
+    .footer {
+        position: absolute;
+        top: 36em;
+        left: 58.5em;
+        color: rgb(116, 113, 113);
+    }
+
+    .image {
+        position: absolute;
+        left: 25em;
+        top: 1em;
+        opacity: 0.2;
+    }
+
+    .p4 {
+        position: absolute;
+        top: 13.5em;
+        font-size: 13px;
+        margin-left: 1em;
+        font-weight: bold;
+        border: 1px solid gray;
+        background: rgb(106, 104, 104);
+        width: fit-content;
+        padding: 5px;
+        left: 49em;
+        color: white;
+        transition: 0.5s ease;
+    }
+
+    .list1 {
+        color: rgb(198, 195, 195);
+        top: 20em;
+        left: 45em;
+        transition: transform 0.5s ease;
+    }
+
+    .list1:hover {
+        color: cyan;
+        transform: scale(1.1);
+    }
+
+    .elem {
+        position: absolute;
+        top: 15em;
+        left: 41em;
+        color: rgb(198, 195, 195);
+    }
+
+    .list1 {
+        margin-bottom: 10px;
+    }
+
+    .h4-3 {
+        position: absolute;
+        color: white;
+        top: 8.5em;
+        left: 40em;
+    }
+
+    .list2 {
+        margin-bottom: 10px;
+        transition: transform 0.5s ease;
+    }
+
+    .list2:hover {
+        transform: scale(1.2);
+        color: cyan;
+    }
+
+    .title::marker {
+        color: rgb(0, 248, 37);
+    }
+
+    .h4-2 {
+        position: absolute;
+        color: white;
+        top: 20em;
+        left: 2.8em;
+    }
+
+    .p2 {
+        position: absolute;
+        top: 27.5em;
+        font-size: 13px;
+        margin-left: 1em;
+        font-weight: bold;
+        border: 1px solid gray;
+        background: rgb(106, 104, 104);
+        width: fit-content;
+        padding: 5px;
+        left: 3.5em;
+        color: white;
+        transition: 0.5s ease;
+    }
+
+
+    .hs {
+        position: absolute;
+        color: rgb(198, 195, 195);
+        top: 27.5em;
+        left: 4em;
+        font-size: 15px;
+    }
+
+    .list {
+        position: absolute;
+        color: rgb(198, 195, 195);
+        top: 15.8em;
+        left: 4em;
+        font-size: 15px;
+    }
+
+    .p3 {
+        position: absolute;
+        top: 20.5em;
+        color: white;
+        font-style: italic;
+        font-size: 10px;
+        left: 5em;
+    }
+
+    .p1 {
+        position: absolute;
+        top: 13em;
+        font-size: 13px;
+        margin-left: 1em;
+        font-weight: bold;
+        border: 1px solid gray;
+        background: rgb(106, 104, 104);
+        width: fit-content;
+        padding: 5px;
+        left: 3.5em;
+        color: white;
+        transition: 0.5s ease;
+    }
+
+    .p1:hover,
+    .p2:hover,
+    .p4:hover {
+        background-color: rgba(5, 229, 76, 0.918);
+        color: black;
+        font-weight: bold;
+    }
+
+    .h2 {
+        position: absolute;
+        top: 1.8em;
+        left: 1.5em;
+        color: white;
+        transition: 0.3s ease;
+    }
+
+    .h2:hover {
+        color: rgb(30, 230, 30);
+    }
+
+    .h3 {
+        position: absolute;
+        top: 5.5em;
+        left: 2em;
+        color: white;
+        transition: 0.3s ease;
+    }
+
+    .h4 {
+        position: absolute;
+        top: 8.5em;
+        left: 2.8em;
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .info {
+        position: absolute;
+        top: 3em;
+        color: white;
+        left: 2em;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .info1 {
+        position: absolute;
+        top: 3em;
+        color: white;
+        left: 25em;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .header {
+        position: fixed;
+        background-color: rgb(3, 4, 4);
+        color: white;
+        font-family: 'Tahoma', sans-serif;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 13px;
+        border: 0px 1px solid white;
+        z-index: 999;
+    }
+
+    .header a::after {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: rgb(39, 253, 253);
+        transition: width 0.3s ease;
+    }
+
+    .header a:hover::after {
+        width: 100%;
+    }
+
+    .header a:active {
+        color: aqua;
+    }
+
+    .header a {
+        position: relative;
+        text-decoration: none;
+        color: rgb(218, 218, 218);
+        margin-left: 42px;
+        left: 42em;
+        font-size: 15px;
+        font-family: monospace;
+    }
+
+    body {
+        opacity: 1;
+        transition: opacity 0.4s ease;
+    }
+
+    body.fade-out {
+        opacity: 0;
+    }
+</style>
+
+</html>

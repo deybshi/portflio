@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>contact</title>
+</head>
+
+<header class=" header">
+    <a href="about.html">About me</a>
+    <a href="resume.html">Resume</a>
+    <a href="service.html">Services</a>
+    <a href="project.html">Project</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html"
+        style="position: absolute; left: 0; font-size: 18px; color: rgb(29, 255, 255); image-resolution: 300×200 px;">HOME
+        </i></a>
+
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            if (link.getAttribute('target') !== '_blank' && link.href.includes('.html')) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = this.href;
+                    }, 400);
+                });
+            }
+        });
+        window.onpageshow = () => window.scrollTo(0, 0);
+    </script>
+
+</header>
+
+
+<body style="background-color: rgb(10, 9, 9);">
+
+    <h2 class="h2">CONTACT ME____</h2>
+
+    <div class="border1">
+        <i class="fa-solid fa-location-dot"></i>
+        <p class="address-p">Address</p>
+        <p class="address-p2">Sogod-Tibgao, Virac, Catanduanes PH</p>
+    </div>
+
+    <div class="border2">
+        <i class="fa-solid fa-envelope"></i>
+        <p class="email-p">Email</p>
+        <p class="email-p2">afernandave@gmail.com</p>
+    </div>
+
+    <div class="border3">
+        <i class="fa-solid fa-share-nodes"></i>
+        <p class="social-p">Social Media</p>
+        <i class="fa-brands fa-square-instagram"></i>
+        <i class="fa-brands fa-square-facebook"></i>
+    </div>
+
+    <div class="border4">
+        <i class="fa-solid fa-phone"></i>
+        <p class="phone-p">Phone Number</p>
+        <p class="phone-p2">+63 909 557 4803</p>
+    </div>
+
+    <form class="message">
+        <input type="name" class="input1" placeholder="Last Name, First Name">
+        <input type="email" class="input2" placeholder="E-mail Address">
+        <input type="country" class="input3" placeholder="Country">
+        <textarea class="input4" placeholder="Message"></textarea>
+        <button type="submit" class="button">Send Message</button>
+    </form>
+
+    <script>
+        document.querySelector('.message').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.querySelector('.input1').value.trim();
+            const email = document.querySelector('.input2').value.trim();
+            const country = document.querySelector('.input3').value.trim();
+            const message = document.querySelector('.input4').value.trim();
+
+            if (!name || !email || !country || !message) {
+                alert('No message yet. Please fill in all fields.');
+                return;
+            }
+
+            alert('Message Sent!');
+            this.reset();
+        });
+    </script>
+
+    <footer class="footer">&copy;all right reserved.</footer>
+</body>
+<style>
+    .button {
+        position: absolute;
+        top: 16em;
+        left: 30em;
+        height: 2.5em;
+        background-color: rgb(35, 229, 22);
+        border: 1px solid rgb(35, 229, 22);
+        border-radius: 8px;
+        transition: 0.5s ease;
+    }
+
+    .button:hover {
+        background-color: rgb(48, 142, 10);
+    }
+
+    .button:active {
+        background-color: aqua;
+    }
+
+    .input4 {
+        position: relative;
+        top: 6em;
+        border: 1px solid rgba(99, 94, 94, 0.628);
+        background: rgba(99, 94, 94, 0.628);
+        left: .5em;
+        width: 97.5%;
+        height: 40%;
+        color: white;
+        transition: 0.5s ease;
+    }
+
+    .input4::placeholder {
+        color: rgb(215, 206, 206);
+        opacity: 1;
+        position: fixed;
+        top: -1%;
+    }
+
+    .input3 {
+        position: absolute;
+        top: 3.5em;
+        border: 1px solid rgba(99, 94, 94, 0.628);
+        background: rgba(99, 94, 94, 0.628);
+        left: .5em;
+        width: 97.5%;
+        height: 7%;
+        color: white;
+        transition: 0.5s ease;
+    }
+
+    .input3::placeholder {
+        color: rgb(215, 206, 206);
+        opacity: 1;
+    }
+
+
+    .input2 {
+        position: absolute;
+        top: 1em;
+        border: 1px solid rgba(99, 94, 94, 0.628);
+        background: rgba(99, 94, 94, 0.628);
+        left: 34em;
+        width: 48%;
+        height: 7%;
+        color: white;
+        transition: 0.5s ease;
+    }
+
+    .input2::placeholder {
+        color: rgb(215, 206, 206);
+        opacity: 1;
+    }
+
+    .input1 {
+        position: absolute;
+        top: 1em;
+        border: 1px solid rgba(99, 94, 94, 0.628);
+        background: rgba(99, 94, 94, 0.628);
+        left: .5em;
+        width: 48%;
+        height: 7%;
+        color: white;
+        transition: 0.5s ease;
+    }
+
+    .input1:hover,
+    .input2:hover,
+    .input3:hover,
+    .input4:hover {
+        background: rgba(132, 126, 126, 0.628);
+    }
+
+    .input1::placeholder {
+        color: rgb(215, 206, 206);
+        opacity: 1;
+    }
+
+    .message {
+        position: absolute;
+        top: 18em;
+        left: 7em;
+        border: 2px solid rgba(68, 64, 64, 0.466);
+        width: 71.8%;
+        height: 45%;
+        background: rgba(68, 64, 64, 0.466);
+    }
+
+    .h2 {
+        position: absolute;
+        top: 1.8em;
+        left: 2.5em;
+        color: white;
+        font-size: 30px;
+        transition: transform 0.5s ease;
+    }
+
+    i.fa-location-dot {
+        position: absolute;
+        font-size: 16px;
+        top: .8em;
+        left: .5em;
+        border: 1px solid white;
+        background: rgba(171, 155, 155, 0.395);
+        border-radius: 20px;
+        padding: 10px;
+        width: 17px;
+        text-align: center;
+        color: rgb(35, 213, 35);
+    }
+
+    i.fa-envelope {
+        position: absolute;
+        font-size: 16px;
+        top: .8em;
+        left: .5em;
+        border: 1px solid white;
+        background: rgba(171, 155, 155, 0.395);
+        border-radius: 20px;
+        padding: 10px;
+        width: 17px;
+        text-align: center;
+        color: rgb(35, 213, 35);
+    }
+
+    i.fa-share-nodes {
+        position: absolute;
+        font-size: 16px;
+        top: .8em;
+        left: .5em;
+        border: 1px solid white;
+        background: rgba(171, 155, 155, 0.395);
+        border-radius: 20px;
+        padding: 10px;
+        width: 17px;
+        text-align: center;
+        color: rgb(35, 213, 35);
+    }
+
+    .address-p {
+        position: relative;
+        font-size: 17px;
+        left: 3.8em;
+        bottom: .3em;
+    }
+
+    .address-p2 {
+        left: 5em;
+        position: relative;
+        font-size: 13px;
+        bottom: 1.5em;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+    }
+
+    .email-p {
+        position: relative;
+        font-size: 17px;
+        left: 3.8em;
+        bottom: .3em;
+    }
+
+    .email-p2 {
+        left: 5em;
+        position: relative;
+        font-size: 13px;
+        bottom: 1.5em;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        transition: 0.3s ease;
+    }
+
+    .social-p {
+        position: relative;
+        font-size: 17px;
+        left: 3.8em;
+        bottom: .3em;
+    }
+
+    i.fa-square-instagram,
+    i.fa-square-facebook {
+        left: 4.3em;
+        position: relative;
+        font-size: 15px;
+        bottom: 1.5em;
+        transition: 0.3s ease;
+    }
+
+    i.fa-square-instagram {
+        margin-right: 5px;
+    }
+
+    i.fa-phone {
+        position: absolute;
+        font-size: 16px;
+        top: .8em;
+        left: .5em;
+        border: 1px solid white;
+        background: rgba(171, 155, 155, 0.395);
+        border-radius: 20px;
+        padding: 10px;
+        width: 17px;
+        text-align: center;
+        color: rgb(35, 213, 35);
+    }
+
+    .email-p2:hover {
+        text-decoration: underline;
+        color: rgb(54, 143, 221);
+    }
+
+    .phone-p {
+        position: relative;
+        font-size: 17px;
+        left: 3.8em;
+        bottom: .3em;
+    }
+
+    .phone-p2 {
+        left: 5em;
+        position: relative;
+        font-size: 13px;
+        bottom: 1.5em;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        transition: 0.3s ease;
+    }
+
+    .border1 {
+        position: absolute;
+        color: white;
+        top: 8em;
+        left: 7em;
+        border: 1px solid rgba(68, 64, 64, 0.466);
+        width: 35%;
+        height: 10%;
+        background: rgba(82, 77, 77, 0.466);
+        transition: 0.5s ease;
+    }
+
+    .border2 {
+        position: absolute;
+        color: white;
+        top: 13em;
+        left: 7em;
+        border: 1px solid rgba(68, 64, 64, 0.466);
+        width: 35%;
+        height: 10%;
+        background: rgba(82, 77, 77, 0.466);
+        transition: 0.5s ease;
+    }
+
+    .border3 {
+        position: absolute;
+        color: white;
+        top: 8em;
+        left: 36em;
+        border: 1px solid rgba(68, 64, 64, 0.466);
+        width: 35%;
+        height: 10%;
+        background: rgba(82, 77, 77, 0.466);
+        transition: 0.5s ease;
+    }
+
+    .border4 {
+        position: absolute;
+        color: white;
+        top: 13em;
+        left: 36em;
+        border: 1px solid rgba(68, 64, 64, 0.466);
+        width: 35%;
+        height: 10%;
+        background: rgba(82, 77, 77, 0.466);
+        transition: 0.5s ease;
+    }
+
+    .border1:hover,
+    .border2:hover,
+    .border3:hover,
+    .border4:hover {
+        background: rgba(123, 116, 116, 0.466);
+    }
+
+    .header {
+        position: fixed;
+        background-color: rgb(18, 24, 24);
+        color: white;
+        font-family: 'Tahoma', sans-serif;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 13px;
+        border: 0px 1px solid white;
+        z-index: 999;
+    }
+
+    .header a::after {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: rgb(39, 253, 253);
+        transition: width 0.3s ease;
+    }
+
+    .header a:hover::after {
+        width: 100%;
+    }
+
+    .header a:active {
+        color: aqua;
+    }
+
+    .header a {
+        position: relative;
+        text-decoration: none;
+        color: rgb(218, 218, 218);
+        margin-left: 42px;
+        left: 42em;
+        font-size: 15px;
+        font-family: monospace;
+    }
+
+    body {
+        opacity: 1;
+        transition: opacity 0.4s ease;
+    }
+
+    body.fade-out {
+        opacity: 0;
+    }
+
+    .footer {
+        position: absolute;
+        top: 115em;
+        left: 70em;
+        color: rgb(132, 126, 126);
+    }
+</style>
+
+</html>

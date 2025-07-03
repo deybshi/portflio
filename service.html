@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Service</title>
+</head>
+
+<header class=" header">
+    <a href="about.html">About me</a>
+    <a href="resume.html">Resume</a>
+    <a href="service.html">Services</a>
+    <a href="project.html">Project</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html"
+        style="position: absolute; left: 0; font-size: 18px; color: rgb(29, 255, 255); image-resolution: 300×200 px;">HOME
+        </i></a>
+
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            if (link.getAttribute('target') !== '_blank' && link.href.includes('.html')) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = this.href;
+                    }, 400);
+                });
+            }
+        });
+        window.onpageshow = () => window.scrollTo(0, 0);
+    </script>
+
+</header>
+
+<body style="background-color: rgb(8, 9, 11);">
+
+    <h2 class="h2">MY SERVICES_____</h2>
+
+    <div class="service1">
+        <i class="fa-solid fa-network-wired"></i>
+        <p class="par1">Networking Services</p>
+        <p class="par1-1">Helping connect and fix computer networks for better communication and internet access.</p>
+    </div>
+
+    <div class="service2">
+        <i class="fa-solid fa-microchip"></i>
+        <p class="par2">Troubleshooting Services</p>
+        <p class="par2-2">Identifying and fixing issues with computer components like the CPU, RAM, hard drive, and
+            peripherals to keep the system working properly.</p>
+    </div>
+
+    <div class="service3">
+        <i class="fa-brands fa-connectdevelop"></i>
+        <p class="par3">Website Development</p>
+        <p class="par3-3">Creating and designing websites using HTML, CSS, and JavaScript to build responsive and
+            user-friendly web pages.</p>
+    </div>
+
+    <h4 class="h4">MY WORKS____</h4>
+    <div class="gallery">
+        <video src="websitevid.mp4" muted controls class="video1" width="1200"></video>
+        <img src="" width="400" alt="image1" class="image1">
+        <img src="" class="image">
+        <img src="" class="image">
+        <img src="" class="image">
+        <img src="" class="image">
+    </div>
+
+
+    <footer class="footer">&copy; all right reserved.</footer>
+
+</body>
+<style>
+    .video1 {
+        position: absolute;
+        top: 40em;
+        left: 2em;
+        image-resolution: 1920px 1080px;
+        z-index: 999;
+    }
+
+    .h4 {
+        position: absolute;
+        top: 31em;
+        left: 4em;
+        color: white;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 18px;
+    }
+
+    .par1 {
+        color: white;
+        top: 8em;
+        left: 4em;
+        font-size: 18px;
+        font-family: 'Times New Roman', Times, serif;
+
+    }
+
+    .par1-1 {
+        color: rgb(235, 226, 226);
+        margin-left: 15px;
+        margin-top: 15px;
+        margin-right: 15px;
+    }
+
+    .par2 {
+        color: white;
+        top: 8em;
+        left: 4em;
+        font-size: 18px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .par2-2 {
+        color: rgb(235, 226, 226);
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-top: 15px;
+    }
+
+
+    .par3 {
+        color: white;
+        top: 8em;
+        left: 4em;
+        font-size: 18px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .par3-3 {
+        color: rgb(235, 226, 226);
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-top: 15px;
+    }
+
+
+    i.fa-network-wired {
+        color: white;
+        text-align: center;
+        left: 4em;
+        font-size: 20px;
+        border: 2px solid rgb(14, 219, 14);
+        box-shadow: 1px 0px 2px 2px gray;
+        padding: 15px;
+        background: rgb(14, 219, 14);
+    }
+
+    i.fa-microchip {
+        color: white;
+        text-align: center;
+        left: 4em;
+        font-size: 20px;
+        border: 2px solid rgb(14, 219, 14);
+        box-shadow: 1px 0px 2px 2px gray;
+        padding: 18px;
+        background: rgb(14, 219, 14);
+    }
+
+    i.fa-connectdevelop {
+        color: white;
+        text-align: center;
+        left: 4em;
+        font-size: 20px;
+        border: 2px solid rgb(14, 219, 14);
+        box-shadow: 1px 0px 2px 2px gray;
+        padding: 18px;
+        background: rgb(14, 219, 14);
+    }
+
+    .service1 {
+        border: .5px solid rgba(46, 44, 44, 0.5);
+        width: 23%;
+        padding: 10px;
+        height: 40%;
+        left: 3.5em;
+        position: absolute;
+        top: 12em;
+        text-align: center;
+        background: rgba(46, 44, 44, 0.5);
+        transition: 0.5s ease;
+    }
+
+    .service2 {
+        border: .5px solid rgba(46, 44, 44, 0.5);
+        width: 23%;
+        padding: 10px;
+        height: 40%;
+        left: 30em;
+        position: absolute;
+        top: 12em;
+        text-align: center;
+        background: rgba(46, 44, 44, 0.5);
+        transition: 0.5s ease;
+    }
+
+    .service3 {
+        border: .5px solid rgba(46, 44, 44, 0.5);
+        width: 23%;
+        padding: 10px;
+        height: 40%;
+        left: 56em;
+        position: absolute;
+        top: 12em;
+        text-align: center;
+        background: rgba(46, 44, 44, 0.5);
+        transition: transform 0.5s ease;
+    }
+
+    .service1:hover,
+    .service2:hover,
+    .service3:hover {
+        transform: scale(1.05);
+        background: rgba(75, 72, 72, 0.5);
+    }
+
+    .h2 {
+        position: absolute;
+        top: 3em;
+        left: 2em;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 27px;
+        transition: 0.5s ease;
+    }
+
+    .h2:hover {
+        color: rgb(12, 212, 12);
+    }
+
+    .header {
+        position: fixed;
+        background-color: rgb(3, 4, 4);
+        color: white;
+        font-family: 'Tahoma', sans-serif;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 13px;
+        border: 0px 1px solid white;
+        z-index: 999;
+    }
+
+    .header a::after {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: rgb(39, 253, 253);
+        transition: width 0.3s ease;
+    }
+
+    .header a:hover::after {
+        width: 100%;
+    }
+
+    .header a:active {
+        color: aqua;
+    }
+
+    .header a {
+        position: relative;
+        text-decoration: none;
+        color: rgb(218, 218, 218);
+        margin-left: 42px;
+        left: 42em;
+        font-size: 15px;
+        font-family: monospace;
+    }
+
+    body {
+        opacity: 1;
+        transition: opacity 0.4s ease;
+    }
+
+    body.fade-out {
+        opacity: 0;
+    }
+
+    .footer {
+        position: absolute;
+        top: 100em;
+        color: white;
+    }
+</style>
+
+</html>

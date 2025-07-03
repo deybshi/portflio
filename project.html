@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+</head>
+
+<header class=" header">
+    <a href="about.html">About me</a>
+    <a href="resume.html">Resume</a>
+    <a href="service.html">Services</a>
+    <a href="project.html">Project</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html"
+        style="position: absolute; left: 0; font-size: 18px; color: rgb(29, 255, 255); image-resolution: 300×200 px;">HOME
+        </i></a>
+
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            if (link.getAttribute('target') !== '_blank' && link.href.includes('.html')) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = this.href;
+                    }, 400);
+                });
+            }
+        });
+        window.onpageshow = () => window.scrollTo(0, 0);
+    </script>
+
+</header>
+
+<body style="background-color: rgb(19, 21, 26);">
+
+    <h2 class="h2">MY PROJECTS____</h2>
+    <h3 class="h3">CATANDUANES TRAVEL WEBSITE</h3>
+    <div class="div1">
+        <img src="website.png" alt="image1" width="1100" height="auto" class="image1">
+    </div>
+    <p class="par1">I created this website to promote the beautiful tourist destinations in Catanduanes. My goal is to
+        showcase the island’s natural attractions, such as beaches, waterfalls, and scenic spots. Through this project,
+        I want to help more people discover the hidden gems of Catanduanes. I also aim to support local tourism by
+        providing useful information for travelers. This website serves as both a travel guide and a digital promotion
+        platform. I hope it helps make Catanduanes more popular and appreciated by visitors from around the country and
+        the world.</p>
+
+    <h3 class="h3-2">CATANDUANES STATE UNIVERSITY WEBSITE</h3>
+    <div class="div2">
+        <img src="catsuweb.png" alt="image2" width="1100" class="image2">
+    </div>
+    <p class="par2">I created this website to promote Catanduanes State University and highlight what it offers to
+        students. The goal is to showcase its programs, facilities, and achievements to attract more enrollees and
+        supporters. Through this project, I want to show the quality of education and opportunities available at the
+        university. I also aim to help incoming students learn more about the campus and what they can expect. This
+        website serves as an introduction and guide for those interested in studying here. I hope it helps Catanduanes
+        State University become more recognized and appreciated across the country.</p>
+
+    <footer class=" footer">&copy;all right reserved</footer>
+</body>
+<style>
+    .h3-2 {
+        position: absolute;
+        top: 56em;
+        left: 23em;
+        color: rgba(91, 255, 15, 0.833);
+        text-decoration: underline;
+    }
+
+    .par1 {
+        position: absolute;
+        top: 45em;
+        color: white;
+        margin-left: 55px;
+        margin-right: 50px;
+        font-size: 18px;
+    }
+
+    .par2 {
+        position: absolute;
+        top: 91em;
+        color: white;
+        margin-left: 55px;
+        margin-right: 50px;
+        font-size: 18px;
+    }
+
+    .h3 {
+        position: absolute;
+        top: 12em;
+        left: 25em;
+        color: rgba(91, 255, 15, 0.833);
+        text-decoration: underline;
+    }
+
+    .image1 {
+        position: absolute;
+        top: 18em;
+        left: 4.5em;
+    }
+
+    .image2 {
+        position: absolute;
+        top: 70em;
+        left: 4.5em;
+    }
+
+    .h2 {
+        position: absolute;
+        top: 4em;
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        left: 2.5em;
+        transition: 0.5s ease;
+    }
+
+    .h2:hover {
+        color: rgb(52, 202, 52);
+    }
+
+    .header {
+        position: fixed;
+        background-color: rgb(3, 4, 4);
+        color: white;
+        font-family: 'Tahoma', sans-serif;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 13px;
+        border: 0px 1px solid white;
+        z-index: 999;
+    }
+
+    .header a::after {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: rgb(39, 253, 253);
+        transition: width 0.3s ease;
+    }
+
+    .header a:hover::after {
+        width: 100%;
+    }
+
+    .header a:active {
+        color: aqua;
+    }
+
+    .header a {
+        position: relative;
+        text-decoration: none;
+        color: rgb(218, 218, 218);
+        margin-left: 42px;
+        left: 42em;
+        font-size: 15px;
+        font-family: monospace;
+    }
+
+    body {
+        opacity: 1;
+        transition: opacity 0.4s ease;
+    }
+
+    body.fade-out {
+        opacity: 0;
+    }
+
+    .footer {
+        position: absolute;
+        top: 115em;
+        left: 70em;
+        color: rgb(132, 126, 126);
+    }
+</style>
+
+</html>
