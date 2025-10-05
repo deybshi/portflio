@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Jose Rizal: Life and Legacy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h2>Dr. Jose Rizal</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#legacy">Legacy</a></li>
+                <li><a href="groups.html">Developers</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Dr. José Protasio Rizal Mercado y Alonso Realonda</h1>
+            <p>The Philippine National Hero: A Life Dedicated to Freedom, Education, and Reform</p>
+            <button class="cta-btn" onclick="scrollToSection('about')"><a target="_blank"
+                    href="https://www.britannica.com/biography/Jose-Rizal">Learn More</a></button>
+        </div>
+        <div class="hero-image">
+            <img src="OIP-removebg-preview.png" alt="Portrait of Dr. Jose Rizal">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Dr. Jose Rizal</h2>
+            <p>José Rizal (June 19, 1861 – December 30, 1896) was a Filipino nationalist, writer, and polymath during
+                the Spanish colonial period. He was a proponent of institutional reforms by peaceful means rather than
+                violent revolution. Rizal is widely considered the greatest national hero of the Philippines.</p>
+            <p>Trained as a physician and educator, Rizal's works exposed the injustices of Spanish rule and inspired
+                the Philippine Revolution. His execution by firing squad fueled the revolution and cemented his legacy.
+            </p>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline">
+        <div class="container">
+            <h2>Life Timeline</h2>
+            <div class="timeline-container">
+                <div class="timeline-item" data-year="1861">
+                    <div class="timeline-content">
+                        <h3>Born in Calamba, Laguna</h3>
+                        <p>The seventh of eleven children in a prosperous family.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="1877">
+                    <div class="timeline-content">
+                        <h3>Enrolls in University of Santo Tomas</h3>
+                        <p>Studies philosophy and letters, later medicine.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="1882">
+                    <div class="timeline-content">
+                        <h3>Travels to Europe for Further Studies</h3>
+                        <p>Studies in Madrid, specializing in ophthalmology.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="1887">
+                    <div class="timeline-content">
+                        <h3>Publishes "Noli Me Tangere"</h3>
+                        <p>His first novel criticizing Spanish colonial abuses.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="1892">
+                    <div class="timeline-content">
+                        <h3>Exiled to Dapitan</h3>
+                        <p>Builds a school, hospital, and farm; continues reforms.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="1896">
+                    <div class="timeline-content">
+                        <h3>Executed in Bagumbayan (Luneta)</h3>
+                        <p>Martyred at age 35, sparking the Philippine Revolution.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Works Section -->
+    <section id="works" class="works">
+        <div class="container">
+            <h2>Major Works</h2>
+            <div class="works-grid">
+                <div class="work-card" onclick="openModal('noli')">
+                    <img src="th.webp" "Noli Me Tangere" width="90">
+                    <h3>Noli Me Tangere (1887)</h3>
+                    <p>A novel depicting the social ills under Spanish rule.</p>
+                </div>
+                <div class="work-card" onclick="openModal('filibusterismo')">
+                    <img src="il_fullxfull.2322536484_nmlz.JPEG" alt="El Filibusterismo">
+                    <h3>El Filibusterismo (1891)</h3>
+                    <p>Sequel to Noli, advocating for reform through satire.</p>
+                </div>
+                <div class="work-card" onclick="openModal('ultimo')">
+                    <img src="mul.jpg" alt="Mi Ultimo Adios">
+                    <h3>Mi Ultimo Adios (1896)</h3>
+                    <p>His farewell poem written before execution.</p>
+                </div>
+                <div class="work-card" onclick="openModal('other')">
+                    <img src="ot.JPEG" alt="Other Works">
+                    <h3>Other Notable Works</h3>
+                    <p>Includes poems like "To the Filipino Youth" and essays on education.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Section -->
+    <section id="legacy" class="legacy">
+        <div class="container">
+            <h2>Legacy</h2>
+            <p>Rizal's writings and ideals inspired the Philippine independence movement. He is honored with Rizal Day
+                on December 30 and monuments worldwide. His emphasis on education, equality, and peaceful reform
+                continues to influence global human rights discussions.</p>
+            <blockquote>"He who does not know how to look back at where he came from will never get to his destination."
+                – José Rizal</blockquote>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Design & Developed by Group 2 | BS INFO TECH - 2B</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Work Details -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
