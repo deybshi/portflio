@@ -6,10 +6,13 @@ let width = 30;
 let height = 6;
 
 noBtn.addEventListener("click", () => {
-  width += 5;
-  height += 2;
-  yesBtn.style.width = width + "%";
-  yesBtn.style.height = height + "vh";
+  // move No button to random position
+  const x = Math.random() * 70;
+  const y = Math.random() * 70;
+
+  noBtn.style.position = "absolute";
+  noBtn.style.left = x + "vw";
+  noBtn.style.top = y + "vh";
 });
 
 yesBtn.addEventListener("click", () => {
