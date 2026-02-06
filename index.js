@@ -6,7 +6,6 @@ let width = 30;
 let height = 6;
 
 noBtn.addEventListener("click", () => {
-  // move No button to random position
   const x = Math.random() * 70;
   const y = Math.random() * 70;
 
