@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Midnight Blog</title>
+    <style>
+      /* --- CSS Variables for Easy Theming --- */
+      :root {
+        --bg-body: #121212;
+        --bg-card: #1e1e1e;
+        --bg-card-hover: #2c2c2c;
+        --text-primary: #e0e0e0;
+        --text-secondary: #a0a0a0;
+        --accent-color: #bb86fc; /* Purple accent */
+        --accent-hover: #9965f4;
+        --border-color: #333;
+        --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--bg-body);
+        color: var(--text-primary);
+        font-family: var(--font-main);
+        line-height: 1.6;
+      }
+
+      /* --- Header / Navigation --- */
+      header {
+        background-color: var(--bg-card);
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid var(--border-color);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--accent-color);
+        text-decoration: none;
+        letter-spacing: 1px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      nav a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: var(--accent-color);
+      }
+
+      /* --- Main Layout --- */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      /* --- NEW: Introduction Section --- */
+      .intro-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 4rem;
+        padding: 2rem;
+        background: linear-gradient(
+          180deg,
+          rgba(30, 30, 30, 0) 0%,
+          rgba(30, 30, 30, 0.5) 100%
+        );
+      }
+
+      .profile-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--accent-color);
+        box-shadow: 0 0 20px rgba(187, 134, 252, 0.3);
+      }
+
+      .profile-info h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-primary);
+      }
+
+      .course-tag {
+        background-color: rgba(187, 134, 252, 0.1);
+        color: var(--accent-color);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: 1px solid var(--accent-color);
+      }
+
+      .profile-bio {
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin-top: 1rem;
+        text-align: justify;
+      }
+
+      /* --- Hero Section (Existing) --- */
+      .hero {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 3rem 1rem;
+        background: linear-gradient(
+          180deg,
+          rgba(30, 30, 30, 0) 0%,
+          rgba(30, 30, 30, 0.5) 100%
+        );
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* --- Blog Grid --- */
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      /* --- Blog Card Design --- */
+      .card {
+        background-color: var(--bg-card);
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        border-color: var(--accent-color);
+      }
+
+      /* Image Handling */
+      .card-image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures image covers area without stretching */
+        transition: transform 0.5s ease;
+      }
+
+      .card:hover .card-image img {
+        transform: scale(1.05);
+      }
+
+      .card-content {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .card-meta {
+        font-size: 0.8rem;
+        color: var(--accent-color);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0.5rem;
+      }
+
+      .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+        color: var(--text-primary);
+      }
+
+      .card-excerpt {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        flex-grow: 1; /* Pushes button to bottom */
+        text-align: justify;
+      }
+
+      .read-btn {
+        align-self: flex-start;
+        text-decoration: none;
+        color: var(--text-primary);
+        font-weight: bold;
+        font-size: 0.9rem;
+        border-bottom: 2px solid var(--accent-color);
+        padding-bottom: 2px;
+        transition: color 0.3s;
+      }
+
+      .read-btn:hover {
+        color: var(--accent-color);
+      }
+
+      /* --- Footer --- */
+      footer {
+        text-align: center;
+        padding: 1rem;
+        margin-top: 4rem;
+        border-top: 1px solid var(--border-color);
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        color: rgb(12, 245, 12);
+      }
+
+      /* --- Mobile Responsiveness --- */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .blog-grid {
+          grid-template-columns: 1fr; /* Stack cards on mobile */
+        }
+
+        .profile-img {
+          width: 120px;
+          height: 120px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <a href="#" class="logo">My journey as an IT student</a>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <!-- NEW: Introduction Section -->
+      <section class="intro-section">
+        <div class="profile-card">
+          <!-- Replace src with your actual image URL -->
+          <img
+            src="b56214b4-eafb-4207-8a85-ded5fef7beee.jpg"
+            alt="Profile Picture"
+            class="profile-img"
+          />
+          <div class="profile-info">
+            <h2>Fernan Dave C. Agurin</h2>
+            <div class="course-tag">BS INFO TECH - 2D</div>
+            <p class="profile-bio">
+              Welcome to my personal blog. I am an IT student who always keeps
+              trying and working hard to improve my skills in technology. Even
+              when programming becomes difficult, I continue learning and
+              practicing to become better every day. In this blog, I share my
+              journey as a student, the challenges I face, the code I create,
+              and the new technologies I discover along the way.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1>My Personal Blog.</h1>
+        <p>
+          Welcome to my website. Here I share stories about programming,
+          networking, friendships, and the also the course itself.
+        </p>
+      </section>
+
+      <!-- Blog Grid -->
+      <div class="blog-grid">
+        <!-- Post 1 -->
+        <article class="card">
+          <div class="card-image">
+            <img src="combined.png" />
+          </div>
+          <div class="card-content">
+            <div class="card-meta">Programming</div>
+            <h2 class="card-title"></h2>
+            <p class="card-excerpt">
+              In my first year, I was introduced to basic programming. At first,
+              coding was very confusing. I had a hard time understanding errors
+              in my program. Sometimes I felt frustrated because even a small
+              mistake, like a missing semicolon, could stop my whole code from
+              running. But slowly, I learned how to read errors and fix them. I
+              realized that programming is like solving a puzzle. It needs
+              patience, focus, and practice. The feeling of seeing my program
+              run successfully and also impressed ma’am Vera, made me proud and
+              motivated me to learn more.
+            </p>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="card">
+          <div class="card-image">
+            <img
+              src="ef3b49dc-fc1b-4953-9b2f-2ac73fe43989.jpg"
+              alt="Retro Tech"
+            />
+          </div>
+          <div class="card-content">
+            <div class="card-meta">Networking</div>
+            <h2 class="card-title"></h2>
+            <p class="card-excerpt">
+              Another subject that challenged me was networking. I learned about
+              IP addresses, routers, switches, and different network models. At
+              first, the concepts were difficult to understand because they were
+              new to me. But when our teacher explained real-life examples, I
+              started to understand how the internet works. I also enjoyed
+              learning about cybersecurity because it taught me how to protect
+              information and stay safe online. It made me more aware of the
+              risks in the digital world.
+            </p>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="card">
+          <div class="card-image">
+            <img src="OIF.webp" alt="Team working" />
+          </div>
+          <div class="card-content">
+            <div class="card-meta">Struggles at my course</div>
+            <h2 class="card-title"></h2>
+            <p class="card-excerpt">
+              Being an IT student is not always easy because it comes with many
+              struggles and challenges. There are times when the lessons become
+              difficult, the code does not work, and understanding complex
+              topics takes a lot of time and effort. Many nights are spent
+              studying, practicing, and trying to solve problems that seem
+              impossible at first. Despite these struggles, the experience
+              teaches patience, perseverance, and the importance of never giving
+              up while continuing to learn and improve in the field of
+              technology.
+            </p>
+          </div>
+        </article>
+
+        <!-- Post 4 -->
+        <article class="card">
+          <div class="card-image">
+            <img src="website2.png" alt="Code on screen" />
+          </div>
+          <div class="card-content">
+            <div class="card-meta">Programming ulit hehe</div>
+            <h2 class="card-title"></h2>
+            <p class="card-excerpt">
+              Being an IT student is exciting because of creating projects like
+              simple websites and working with teammates. Although there are
+              disagreements, teamwork helps improve technical, communication,
+              and leadership skills. The journey is challenging with sleepless
+              nights, debugging, and moments of self-doubt, but these challenges
+              help me grow and learn. Studying IT also helped me understand the
+              importance and impact of technology in everyday life.
+            </p>
+          </div>
+        </article>
+
+        <!-- Post 5 -->
+        <article class="card">
+          <div class="card-image">
+            <img
+              src="d630786f-e416-49df-b4ac-223c7f068347.jpg"
+              alt="Cybersecurity"
+            />
+          </div>
+          <div class="card-content">
+            <div class="card-meta">Friends</div>
+            <h2 class="card-title"></h2>
+            <p class="card-excerpt">
+              Studying IT has also helped me build many friendships along the
+              way. In our classes, we often work together on coding projects,
+              help each other understand difficult lessons, and share ideas
+              about technology. Through these experiences, I was able to meet
+              many people who have the same interests in programming and
+              computers. These friendships make the journey in IT more
+              enjoyable, because we support and motivate each other to keep
+              learning and improving.
+            </p>
+          </div>
+        </article>
+
+        <!-- Post 6 -->
+        <article class="card">
+          <div class="card-image">
+            <img
+              src="4269e529-7269-4e23-80e7-e29868a8c871.jpg"
+              alt="Earth from space"
+            />
+          </div>
+          <div class="card-content">
+            <div class="card-meta">BASTA CICT, QUALITY!</div>
+            <h2 class="card-title"></h2>
+            <p class="card-excerpt">
+              As I continue my journey as an IT student, I know there is still a
+              lot to learn. Technology is always changing, and I must keep
+              improving my skills. Even though the path is not easy, I am proud
+              of the progress I have made. Being an Information Technology
+              student is not just about learning computers. It is about solving
+              problems, thinking logically, and preparing for a future in a
+              digital world.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy;Design and developed by Fernan Dave Agurin.</p>
+    </footer>
+  </body>
+</html>
