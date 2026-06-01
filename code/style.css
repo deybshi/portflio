@@ -1,0 +1,579 @@
+/* ================= GENERAL STYLES ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #fbf6f6;
+  color: #4a4a4a;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Container to handle layout after logging in */
+#main-app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ================= LOGIN CARD ================= */
+.login-box {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(224, 169, 175, 0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.heart-icon {
+  font-size: 3rem;
+  animation: heartbeat 1.5s infinite;
+  margin-bottom: 15px;
+}
+
+.login-box h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.5rem;
+  color: #d1667b;
+  margin-bottom: 10px;
+}
+
+.login-box p {
+  font-size: 0.9rem;
+  color: #8c8c8c;
+  margin-bottom: 25px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 20px;
+  border: 2px solid #f0dbdf;
+  border-radius: 25px;
+  font-size: 1rem;
+  outline: none;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #d1667b;
+}
+
+.btn {
+  width: 100%;
+  background: #d1667b;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
+  transition:
+    background 0.3s,
+    transform 0.2s;
+}
+
+.btn:hover {
+  background: #b54f63;
+  transform: translateY(-2px);
+}
+
+.error-msg {
+  color: #e04d4d;
+  font-size: 0.85rem;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+/* ================= NAVIGATION HEADER ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 15px rgba(224, 169, 175, 0.15);
+  z-index: 1000;
+}
+
+.nav-logo {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.8rem;
+  color: #d1667b;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #8c8c8c;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #d1667b;
+}
+
+/* Cute underline indicator for the active header link */
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 2px;
+  background: #d1667b;
+  bottom: 0;
+  left: 20%;
+  border-radius: 2px;
+}
+
+.logout-btn {
+  background: #f0dbdf;
+  border: none;
+  color: #d1667b;
+  padding: 6px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.logout-btn:hover {
+  background: #d1667b;
+  color: white;
+}
+
+/* ================= SECTIONS STRUCTURE ================= */
+.content-section {
+  width: 100%;
+  max-width: 1200px;
+  padding: 120px 20px 40px 20px; /* Top padding leaves room for fixed navbar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subtitle {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: #8c8c8c;
+  text-transform: uppercase;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* ================= MONTHIVERSARY SECTION ================= */
+.monthsary-container {
+  text-align: center;
+  max-width: 700px;
+  width: 100%;
+  background: white;
+  padding: 50px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.monthsary-container h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 3.5rem;
+  color: #d1667b;
+}
+
+.counter-card {
+  background: #fff5f6;
+  border: 1px dashed #e0a9af;
+  padding: 30px;
+  border-radius: 15px;
+  margin: 40px auto;
+  display: inline-block;
+  min-width: 250px;
+}
+
+.counter-number {
+  font-size: 4rem;
+  font-weight: 600;
+  color: #d1667b;
+  line-height: 1;
+}
+
+.counter-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #8c8c8c;
+  margin-top: 10px;
+}
+
+.love-message {
+  font-style: italic;
+  color: #555;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* ================= GALLERY SECTION ================= */
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 3.5rem;
+  color: #d1667b;
+}
+
+/* ================= FLEXBOX GALLERY DISPLAY ================= */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to move to the next row on small screens */
+  gap: 30px; /* Keeps a clean spacing between your photo cards */
+  width: 100%;
+  justify-content: center; /* Centers the remaining items on the last row */
+}
+
+.gallery-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+
+  /* 
+       flex: grow shrink basis;
+       1 = allowed to expand to fill extra space
+       1 = allowed to shrink smaller than its basis
+       280px = the ideal minimum width before wrapping or shrinking
+    */
+  flex: 1 1 280px;
+
+  /* Optional: Sets a maximum width so a single card doesn't stretch 
+       awkwardly wide on huge desktop screens */
+  max-width: 450px;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover; /* Keeps aspect ratio intact so images don't look squished */
+  display: block;
+  transition: transform 0.5s;
+}
+
+.card-info {
+  padding: 20px;
+}
+
+.card-info h3 {
+  font-size: 1.2rem;
+  color: #d1667b;
+  margin-bottom: 8px;
+}
+
+.card-info p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(224, 169, 175, 0.2);
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes heartbeat {
+  0%,
+  80%,
+  100% {
+    transform: scale(1);
+  }
+  20%,
+  60% {
+    transform: scale(1.15);
+  }
+  40% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tab-fade {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}
+
+/* Responsive view tweaks */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+  .nav-logo {
+    font-size: 1.5rem;
+  }
+  .nav-links {
+    gap: 15px;
+  }
+  .monthsary-container h2,
+  .section-title h2 {
+    font-size: 2.8rem;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= HAMBURGER MENU ENGINE ================= */
+
+/* 1. Hide the burger button by default on desktop computers */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Style the 3 lines inside the burger button */
+.burger-menu span {
+  width: 100%;
+  height: 3px;
+  background-color: #d1667b;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 2. Mobile Responsive Rules (Activates when screen is smaller than 768px) */
+@media (max-width: 768px) {
+  .burger-menu {
+    display: flex; /* Reveals the burger icon on mobile */
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hides the menu completely off-screen to the right side */
+    width: 70%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: right 0.4s ease-in-out; /* Makes it slide out smoothly */
+  }
+
+  /* 3. THIS IS WHAT WAS MISSING: The active class that slides the menu in! */
+  .nav-links.open {
+    right: 0 !important; /* Forces the menu onto the screen */
+  }
+
+  /* Transforms the 3 burger lines into an 'X' close button when active */
+  .burger-menu.close-icon span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .burger-menu.close-icon span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger-menu.close-icon span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* Centers the pink line effect under active mobile links */
+  .nav-links a.active::after {
+    width: 30px;
+    left: calc(50% - 15px);
+  }
+} /* ================= THEME SONG ================= */
+/* ================= THEME SONG TAB STYLES ================= */
+
+/* Grid container for the cards */
+.songs-grid {
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+  flex-wrap: wrap;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual Song Card */
+.song-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.song-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Vinyl Record Design */
+.vinyl-record {
+  width: 160px;
+  height: 160px;
+  background: #222222;
+  border-radius: 50%;
+  margin: 0 auto 25px auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Center of the vinyl */
+.vinyl-center {
+  width: 50px;
+  height: 50px;
+  background: #ff4a71; /* The vibrant pink core */
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+}
+
+/* Typography inside card */
+.song-info h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #333333;
+  margin: 0 0 5px 0;
+  letter-spacing: 1px;
+}
+
+.song-info .artist {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #777777;
+  margin: 0 0 25px 0;
+  letter-spacing: 2px;
+}
+
+/* The Pink Play Button */
+.play-btn {
+  background-color: #ff4a71;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 35px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 74, 113, 0.3);
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+}
+
+.play-btn:hover {
+  background-color: #e03b60;
+  transform: scale(1.05);
+}
+
+/* Sub-instructions below play button */
+.instruction {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  color: #666666;
+  margin: 15px 0 25px 0;
+}
+
+/* Lyrics Section */
+.lyrics-box h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #333333;
+  margin: 0 0 8px 0;
+}
+
+.lyrics-box p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: #555555;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0;
+  padding: 0 10px;
+}

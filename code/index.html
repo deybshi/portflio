@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Private Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ================= LOGIN SCREEN ================= -->
+    <div id="login-container" class="login-box">
+      <div class="heart-icon">❤️</div>
+      <h2>Our Gallery & Story</h2>
+      <p>This gallery is locked. Enter our call sign to enter.</p>
+
+      <form id="login-form" onsubmit="validateLogin(event)">
+        <div class="input-group">
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter our call sign in CAPSLOCK"
+            required
+          />
+        </div>
+        <button type="submit" class="btn">Unlock Gallery</button>
+        <p id="error-message" class="error-msg"></p>
+      </form>
+    </div>
+
+    <!-- ================= MAIN APP WRAPPER (Hidden by default) ================= -->
+    <div id="main-app" class="hidden">
+      <!-- ================= NAVIGATION HEADER ================= -->
+      <header class="navbar">
+        <div class="nav-logo">Deyb &amp; Chelle</div>
+        <!-- New Hamburger Burger Icon -->
+        <button class="burger-menu" id="burger-toggle" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Added id="nav-menu" here so the JavaScript toggle can target it -->
+        <nav class="nav-links" id="nav-menu">
+          <a
+            href="#"
+            id="nav-monthsary"
+            class="active"
+            onclick="switchTab('monthsary')"
+            >Monthsary</a
+          >
+          <!-- Added Theme Song Tab Link -->
+          <a href="#" id="nav-song" onclick="switchTab('song')">Theme Song</a>
+          <a href="#" id="nav-gallery" onclick="switchTab('gallery')"
+            >Gallery</a
+          >
+          <button onclick="logout()" class="logout-btn">Lock</button>
+        </nav>
+      </header>
+
+      <!-- ================= MONTHIVERSARY TAB ================= -->
+      <section id="monthsary-tab" class="content-section tab-fade">
+        <div class="monthsary-container">
+          <h2>OUR MONTHSARY</h2>
+          <p class="subtitle">Counting every beautiful moment together</p>
+
+          <!-- Love Counter Card -->
+          <div class="counter-card">
+            <div class="counter-number">4</div>
+            <div class="counter-label">
+              Months of Pure Happiness <br />
+              <b>Since February 2026</b>
+            </div>
+          </div>
+
+          <div class="love-message">
+            <p>
+              "Every single with you reminds me of how lucky I am. Thank you for
+              the endless laughs and love, and for being my favorite person in
+              the world. Thanks for always staying to me even though we're
+              always have a misunderstanding. Thankyou for understanding me
+              lovee na kahit minsan mahirap ako mahalin, i won't promise
+              anything pero one thing is sure, na i love taka sa paraan na alam
+              ko. ILOVEEEYOUUUUSOOOMUCHHHHH ALWAYSSSS LOVELOVEEEEEE!❤️
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= THEME SONG TAB ================= -->
+      <section id="song-tab" class="content-section hidden tab-fade">
+        <div class="song-wrapper">
+          <div class="section-title">
+            <h2>OUR THEME SONG</h2>
+            <p class="subtitle">THE SOUNDTRACK TO OUR LOVE STORY</p>
+          </div>
+
+          <main class="songs-grid">
+            <div class="song-card">
+              <div class="vinyl-record">
+                <div class="vinyl-center"></div>
+              </div>
+              <div class="song-info">
+                <h3>KALAPASTANGAN</h3>
+                <p class="artist">FITTERKARMA</p>
+                <button class="play-btn">▶ PLAY</button>
+                <audio
+                  class="song-audio"
+                  src="/audio/KALAPASTANGAN_CROP.m4a"
+                ></audio>
+
+                <p class="instruction">
+                  Click to listen to our song while browsing
+                </p>
+                <div class="lyrics-box">
+                  <h4>Lyrics</h4>
+                  <p>
+                    "Kalapastangan ang 'di ka ibigin, kalokohan ang 'di ka
+                    isipin, kung ang mundo ay biglang gugunawin, ikaw ang una
+                    kong hahanapin"
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="song-card">
+              <div class="vinyl-record">
+                <div class="vinyl-center"></div>
+              </div>
+              <div class="song-info">
+                <h3>EVERY BREATH YOU TAKE</h3>
+                <p class="artist">THE POLICE</p>
+                <button class="play-btn">▶ PLAY</button>
+                <audio
+                  class="song-audio"
+                  src="/audio/Video Project 4.m4a"
+                ></audio>
+
+                <p class="instruction">
+                  Click to listen to our song while browsing
+                </p>
+                <div class="lyrics-box">
+                  <h4>Lyrics</h4>
+                  <p>
+                    "I'll be watching you every breath you take, every move you
+                    make, every bond you break, I'll be watching you"
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="song-card">
+              <div class="vinyl-record">
+                <div class="vinyl-center"></div>
+              </div>
+              <div class="song-info">
+                <h3>BY CHANCE</h3>
+                <p class="artist">J.R.A.</p>
+                <button class="play-btn">▶ PLAY</button>
+                <audio
+                  class="song-audio"
+                  src="/audio/J.R.A. - By Chance (You & I) Lyrics.mp3"
+                ></audio>
+
+                <p class="instruction">
+                  Click to listen to our song while browsing
+                </p>
+                <div class="lyrics-box">
+                  <h4>Lyrics</h4>
+                  <p>
+                    "You and I. could be like sonny and cher, honey and bears,
+                    oh-oh and you and i, could be like aladdin and jasmine let's
+                    make it happen la la la la la la la la la"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </section>
+
+      <!-- ================= GALLERY TAB (Hidden by default) ================= -->
+      <section id="gallery-tab" class="content-section hidden tab-fade">
+        <div class="gallery-wrapper">
+          <div class="section-title">
+            <h2>Our BEAUTIFUL MOMENTS</h2>
+            <p class="subtitle">Every day with you is my favorite day</p>
+          </div>
+
+          <!-- Photo Grid -->
+          <main class="gallery-grid">
+            <!-- Card 1 -->
+            <div class="gallery-card">
+              <img
+                src="/images/74f3f197-c57a-41f5-986a-33a67de23573.jpg"
+                alt="Our First Date"
+              />
+              <div class="card-info">
+                <h3>Where It All Began</h3>
+                <p>Unang punta, ang pamidbid pa classmate HAHAHAHHAHA</p>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="gallery-card">
+              <img
+                src="/images/e6157a5a-84bb-4743-814c-b65facb38d04.jpg"
+                alt="Summer Road Trip"
+              />
+              <div class="card-info">
+                <h3>The first kiss</h3>
+                <p>kiniss nya agad ako oh HHHAHAHAHA</p>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="gallery-card">
+              <img
+                src="/images/ee17b0ed-7312-44e7-80be-6640fd704f8c.jpg"
+                alt="Cozy Coffee Date"
+              />
+              <div class="card-info">
+                <h3>Clingy naman nyan</h3>
+                <p>Na aamaze sa ganda moooo, hehe</p>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="gallery-card">
+              <img
+                src="/images/5366d94c-f4e3-450b-aac3-2780595c1dc5.jpg"
+                alt="Sunset Walks"
+              />
+              <div class="card-info">
+                <h3>Sweet sweet namannn</h3>
+                <p>cute naman natin together here</p>
+              </div>
+            </div>
+
+            <!-- ... (Remaining gallery cards stay exactly the same) ... -->
+            <div class="gallery-card">
+              <img
+                src="/images/2f454f9c-9339-4bf3-b09c-fa28c0acfd4b.jpg"
+                alt="Sunset Walks"
+              />
+              <div class="card-info">
+                <h3>Pretty naman nyann</h3>
+                <p>Dami nangyari ning time na yan</p>
+              </div>
+            </div>
+            <div class="gallery-card">
+              <img
+                src="/images/09d640c6-fffa-4819-8424-3f106be6344b.jpg"
+                alt="Sunset Walks"
+              />
+              <div class="card-info">
+                <h3>Panduwang punta</h3>
+                <p>pasakitan pa magpaisi ki rochelle HAHAHAHHAAH</p>
+              </div>
+            </div>
+            <div class="gallery-card">
+              <img
+                src="/images/adaf3ce9-3cb4-4f87-9734-9a282beda418.jpg"
+                alt="Sunset Walks"
+              />
+              <div class="card-info">
+                <h3>Picture picture muna</h3>
+                <p>hiya hiya pa man daa sya dyan HAHAHAHAHA</p>
+              </div>
+            </div>
+            <div class="gallery-card">
+              <img
+                src="/images/b635535e-15f9-47c9-bc72-4d561e1a5d2e.jpg"
+                alt="Sunset Walks"
+              />
+              <div class="card-info">
+                <h3>Super Clingyyyy</h3>
+                <p>Superrrr gandaaa namannn talagaaaa</p>
+              </div>
+            </div>
+            <div class="gallery-card">
+              <img
+                src="/images/80bf051d-05cf-4e7b-a0d3-73a92d5fb030.jpg"
+                alt="Sunset Walks"
+              />
+              <div class="card-info">
+                <h3>While waiting sa next sub</h3>
+                <p>Ayan na naman, nagpapacute na naman HHAHAHAHA</p>
+              </div>
+            </div>
+            <div class="gallery-card">
+              <img
+                src="/images/82d8bc26-5c68-407e-8957-9621e3673ed2.jpg"
+                alt="Sunset Walks"
+              />
+              <div class="card-info">
+                <h3>Same lang naman</h3>
+                <p>Dai gabago ang pandok pag ga pic HAHAHAHAH</p>
+              </div>
+            </div>
+            <div class="gallery-card">
+              <img
+                src="/images/7a80d5f0-bd48-4b2b-ac4b-f2c86dc65ab8.jpg"
+                alt="Sunset Walks"
+              />
+              <div class="card-info">
+                <h3>Before mag away haysss</h3>
+                <p>Gaano si bienjoe dyan HHAHAHAHAHA</p>
+              </div>
+            </div>
+            <div class="gallery-card">
+              <img
+                src="/images/c8e5453c-1def-4723-a1df-246cb74da29a.jpg"
+                alt="Sunset Walks"
+              />
+              <div class="card-info">
+                <h3>Ang pandok bayaa</h3>
+                <p>Maldita talaga HAHAAHAHHA</p>
+              </div>
+            </div>
+            <div class="gallery-card">
+              <img
+                src="/images/e478629e-78d3-4e65-b77f-6cb497591601.jpg"
+                alt="Sunset Walks"
+              />
+              <div class="card-info">
+                <h3>First time nakapunta sa dagat ning bon-ot nila</h3>
+                <p>Happy yan sya ta ayos na cp nya HAHAHAHAHA</p>
+              </div>
+            </div>
+            <div class="gallery-card">
+              <img
+                src="/images/f7790983-e08c-45b0-a095-0344e2d9da02.jpg"
+                alt="Sunset Walks"
+              />
+              <div class="card-info">
+                <h3>Maldita talaga</h3>
+                <p>Dai talagang pinagbago ang ugali HAHAHAHAHA</p>
+              </div>
+            </div>
+            <div class="gallery-card">
+              <img
+                src="/images/d364ca68-af38-4a1d-839f-9d50ee7e2906.jpg"
+                alt="Sunset Walks"
+              />
+              <div class="card-info">
+                <h3>Face ning olats</h3>
+                <p>Talo yarn? HAHAHAHHA</p>
+              </div>
+            </div>
+            <div class="gallery-card">
+              <img
+                src="/images/ecf854a2-5849-4191-ac13-f64e47e899bf.jpg"
+                alt="Sunset Walks"
+              />
+              <div class="card-info">
+                <h3>Kamissss</h3>
+                <p>Cute cute naman natin here HAHAHAHAHA</p>
+              </div>
+            </div>
+            <div class="gallery-card">
+              <img
+                src="/images/e5906e35-a669-4ded-866f-3418949299f2.jpg"
+                alt="Sunset Walks"
+              />
+              <div class="card-info">
+                <h3>Nakaabot man sa marilima</h3>
+                <p>First time nyan makapunta sa marilima HAHAHAHAH</p>
+              </div>
+            </div>
+            <div class="gallery-card">
+              <img
+                src="/images/15baf98a-c351-4507-8f44-21187c8630ff.jpg"
+                alt="Sunset Walks"
+              />
+              <div class="card-info">
+                <h3>After nyan dai na namansin</h3>
+                <p>Gagalit sya ta dai pa daa kaming pic HAHAHAHAH</p>
+              </div>
+            </div>
+          </main>
+        </div>
+      </section>
+    </div>
+
+    <!-- JavaScript Navigation & Logic -->
+    <script src="index.js"></script>
+  </body>
+</html>
